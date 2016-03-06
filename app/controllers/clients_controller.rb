@@ -13,7 +13,7 @@ class ClientsController < ApplicationController
     if @client.save
       redirect_to(:action=> 'index')
     else
-      render (new)
+      render ('new')
     end
   end
 
@@ -31,7 +31,7 @@ class ClientsController < ApplicationController
 
   private
    def client_param
-    param.require(:client).permit(:name, :address, :designation)
+    params.require(:client).permit(:name, :address, :designation)
    end
 
 
