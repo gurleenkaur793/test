@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
 
-  get 'clients/index'
+  # get 'clients/index'
 
-  get 'clients/new'
+  # get 'clients/new'
 
-  get 'clients/show'
+  # get 'clients/show'
 
-  get 'clients/edit'
+  # get 'clients/edit'
 
-  get 'clients/delete'
+  # get 'clients/delete'
 
   root 'welcome#index'
+
+  match ':controller(/:action(/:id))' , :via => :get
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
