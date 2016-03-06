@@ -9,13 +9,13 @@
 			<td>Address</td>
 			<td>Designation</td>
 		</tr>
-		<% @clients.each do |s| %>
+		<% @clients.each do |client| %>
 		<tr>
-			<td><%=s.name%></td>
-			<td><%=s.address%></td>
-			<td><%=s.designation%></td>
+			<td><%=client.name%></td>
+			<td><%=client.address%></td>
+			<td><%=client.designation%></td>
 			<td class = "action">
-				<%= link_to("Show", {:action => 'show' , :id =>s.id} , :class => 'action show')%>
+				<%= link_to("Show", {:action => 'show' , :id =>client.id} , :class => 'action show')%>
 				<%= link_to("Update","#" , :class => 'action update')%>
 				<%= link_to("Delete", "#" , :class => 'action show')%>
 			</td>
