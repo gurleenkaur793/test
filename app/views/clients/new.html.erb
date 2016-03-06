@@ -2,7 +2,7 @@
 <%= link_to("Back to Index", {:action=> 'index'} , :class => 'action show')%>
 <div class = "client new">
 	<h2> New Client </h2>
-	<%= form_for(:client, :url {:action "create"}) do |f| %>
+	<%= form_for(:client, :url {:action=> "create"}) do |f| %>
 	<table>
 		<tr>
 			<th>Name:</th>
