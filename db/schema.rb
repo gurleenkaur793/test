@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305075339) do
+ActiveRecord::Schema.define(version: 20160305103627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,40 @@ ActiveRecord::Schema.define(version: 20160305075339) do
     t.string "name",        limit: 60
     t.string "address",     limit: 150
     t.string "designation",             null: false
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.integer  "section_id"
+    t.string   "name"
+    t.integer  "position"
+    t.boolean  "visible",      default: false
+    t.string   "content_type"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pages", ["section_id"], name: "index_pages_on_section_id", using: :btree
+
+  create_table "sections", force: :cascade do |t|
+    t.integer  "subject_id"
+    t.string   "name"
+    t.integer  "position"
+    t.boolean  "visible",    default: false
+    t.string   "permalink"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sections", ["permalink"], name: "index_sections_on_permalink", using: :btree
+  add_index "sections", ["subject_id"], name: "index_sections_on_subject_id", using: :btree
+
+  create_table "subjects", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.boolean  "visible",    default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

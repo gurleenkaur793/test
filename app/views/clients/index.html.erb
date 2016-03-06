@@ -1,0 +1,32 @@
+<h1>Listing Clients</h1>
+
+<div class="Clients Index">
+	<%= link_to("Add New Client", "#" , :class => 'action new')%>
+	<table class ="Listing">
+		<tr class = "header">
+			<!-- <td>&nbsp;</td> -->
+			<td>Name</td>
+			<td>Address</td>
+			<td>Designation</td>
+		</tr>
+		<% @clients.each do |s| %>
+		<tr>
+			<td><%=s.name%></td>
+			<td><%=s.address%></td>
+			<td><%=s.designation%></td>
+			<td class = "action">
+				<%= link_to("Show", "#" , :class => 'action show')%>
+				<%= link_to("Update","#" , :class => 'action update')%>
+				<%= link_to("Delete", "#" , :class => 'action show')%>
+			</td>
+		</tr>
+		<%end%>
+	</table>
+
+</div>
+
+
+			
+		
+
+
