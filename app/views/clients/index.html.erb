@@ -15,7 +15,7 @@
 			<td><%=s.address%></td>
 			<td><%=s.designation%></td>
 			<td class = "action">
-				<%= link_to("Show", "#" , :class => 'action show')%>
+				<%= link_to("Show", {:action => 'show'} , :class => 'action show')%>
 				<%= link_to("Update","#" , :class => 'action update')%>
 				<%= link_to("Delete", "#" , :class => 'action show')%>
 			</td>
