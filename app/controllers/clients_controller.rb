@@ -2,7 +2,7 @@ class ClientsController < ApplicationController
   layout false
   
   def index
-    @clients = Client.order("name ASC")
+    respond_with Client.order("name ASC")
   end
 
   def new
@@ -24,6 +24,13 @@ class ClientsController < ApplicationController
 
 
   def edit
+    @client = Client.find(params[:id])
+    @client = Client.update_Attribute(client_param)
+    if @client.save
+      redirect_to(:action=> 'index')
+    else
+      render ('edit')
+    end
   end
 
   def delete
