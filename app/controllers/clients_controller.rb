@@ -2,7 +2,7 @@ class ClientsController < ApplicationController
   layout false
   
   def index
-    respond_with Client.order("name ASC")
+    @clients = Client.order("name ASC")
   end
 
   def new
@@ -29,7 +29,7 @@ class ClientsController < ApplicationController
     if @client.save
       redirect_to(:action=> 'index')
     else
-      render ('edit')
+      render ('new')
     end
   end
 

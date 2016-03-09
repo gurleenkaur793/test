@@ -1,2 +1,27 @@
-<h1>Clients#edit</h1>
+<h1>Clients#new</h1>
+<%= link_to("Back to Index", {:action=> 'index'} , :class => 'action show')%>
+<div class = "client new">
+	<h2> New Client </h2>
+	<%= form_for(:client, :url=> {:action=> "create"}) do |f| %>
+	<table>
+		<tr>
+			<th>Name:</th>
+			<td><%= f.text_field(:name) %></td>
+		</tr>
+		<tr>
+			<th>Address:</th>
+			<td><%= f.text_field(:address) %></td>
+		</tr>
+		<tr>
+			<th>Designation:</th>
+			<td><%= f.text_field(:designation) %></td>
+		</tr>
+	</table>
+
+  
+ <div class = "Form_button">
+ 	<%= submit_tag("Create Client")%>
+ </div>
+ <% end %>
+</div><h1>Clients#edit</h1>
 <p>Find me in app/views/clients/edit.html.erb</p>
